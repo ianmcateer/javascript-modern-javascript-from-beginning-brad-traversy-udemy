@@ -1,0 +1,7 @@
+recommends setting tab size to 2
+bracket coloriser vscode plugin 
+live server 
+js es6 code snippets 
+
+emmett
+! and then tab 
