@@ -248,5 +248,437 @@ val = firstname.slice(0, 4);
 // but what you can do is you can start from the back and take the last three
 val = firstname.slice(-3);
 
-
+// split()
+const str = 'hello my name is Brad';
+str.split(' '); //split at the spaces into an array 
 console.log(val);
+
+//replace 
+val = str.replace('Brad', 'Jack')
+
+//includes
+val = str.includes('Hello')  //returns a boolean 
+
+//   ---------------------------  //
+//   ---------------------------  //
+//  TEMPLATE STRINGS
+
+const name = 'John';
+const age = 30;
+const job = 'Web Developer';
+const city = 'Miami';
+let html;
+
+// sometimes rendering html through javascript so creating some html string s
+// without template strings
+html = '<ul><li>Name: ' = name + '</li><li>Age: ' + age + ' </li><li>Job: ' + job;
+
+function hello(){
+  return 'hello'
+}
+
+// template srings have fixed this (es6)
+html = `
+  <ul>
+    <li>Name: ${name}</li>
+    <li>Age: ${age}</li>
+    <li>Job: ${job}</li>
+    <li>City: ${city}</li>
+    <li>${hello()}</li>
+    <li>${age > 30 ? 'Over 30': 'Under 30'}</li>
+  </ul>
+`;
+
+document.body.innerHTML = html;
+
+//   ---------------------------  //
+//   ---------------------------  //
+//  ARRAYS AND ARRAY METHODS
+
+// alllow us to store mutiple values
+const numbers = [43, 56, 33,23,44,36,5];
+const numbers2 = new Array(22,45,33,76,54);
+const fruit = ['Apple', 'Banana', 'Orange', 'Pear'];
+const mixed = [22, 'hello', true, undefined, null, {a:1, b: 1}, new Date()];
+
+let val;
+// get array length
+val = numbers.length;
+// check if something is an array
+val = Array.isArray(numbers); 
+
+// get a single value form an array 
+// arrays are zero bassed
+val = numbers[3];
+
+// insert into array 
+numbers[2] = 100;
+// find index of value 
+val = numbers.indexOf(36)
+
+
+// MUTATING ARRAYS
+// add onto end of array
+numbers.push(250);
+
+// add onto front 
+numbers.unshift(120);
+
+// take off from end 
+numbers.pop();
+
+// take off first element from front 
+numbers.shift()
+
+// can also splice out from any place in array - 
+// with this can remove or replace existing elements or add new elements
+numbers.splice(1,1);
+
+// reverse array 
+numbers.reverse();
+
+// concat array 
+val = numbers.concat(numebrs2);
+
+// sort arrays 
+val = fruit.sort()
+// sorting numebrs- need to pas in a callback
+val = numbers.sort()
+
+// use the 'compare function' to sort numbers array 
+val = numbers.sort(function(x, y){
+  return x - y;
+});
+
+// rveerse sort
+  val = numbers.sort(function(x, y){
+    return y - x;
+  });
+
+  // find takes in a testing function
+  function under50(number){
+    return number < 50;
+  }
+
+  val = numbers.find(under50);
+
+  // will return the first number under 50
+  // looked at array 
+
+  //   ---------------------------  //
+//   ---------------------------  //
+//  OBJECT LITERALS
+
+const person = {
+  firstName: 'Steve',
+  lastName: 'Smith',
+  age: 30,
+  email: 'steve@aol.com',
+  hobbies: ['music', 'sports'],
+  address: {
+    city: 'miami',
+    state: 'florida'
+  },
+  getBirthYear: function(){
+    return 2017 - this.age;
+  }
+}
+
+let val;
+val = person;
+
+val=person.firstName;
+// can also use this syntax
+person['firstName'];
+val = person.age;
+val=person.hobbies;
+val=person.address.state;
+val=person.address['city'];
+val = person.getBirthYear();
+
+// also see array or object
+const people = [
+  {name: 'john', age: 30},
+  {name: 'mike', age: 23},
+]
+
+for (let i = 0; i < people.length; i++){
+  console.log(people[i].name)
+}
+
+console.log(val)
+
+//   ---------------------------  //
+//   ---------------------------  //
+//  DATES AND TIMES WITH JAVASCRIPT
+
+let val;
+
+const today = new Date();
+let birthday = new Date('9-10-1981 11:25:00');
+birthday = new Date('September 10 1981');
+birthday = new Date('9/10/1981');
+
+val= today.getMonth();
+val = today.getDate();
+val = today.getDay();
+val = today.getHours();
+val = today.getMinutes();
+
+birthday.setMonth(2);
+
+console.log(typeof val);
+
+//   ---------------------------  //
+//   ---------------------------  //
+//  IF STATEMENTS< COMPARISON OPERATORS
+
+// if (something){
+//   do something
+// } else {
+//   do somehting else
+// }
+
+const id = 100;
+if (id == 100) {
+  console.log('correct')
+} else {
+  console.log('incorrect')
+}
+
+// not equal to 
+if (id != 100) {
+  console.log('correct')
+} else {
+  console.log('incorrect')
+}
+
+// equal to value & type
+// suggest using this one most of the time 
+if (id === 100){
+  console.log('correct')
+} else {
+  console.log('incorrect')
+}
+
+// how to test if somehting is defined??
+// test to see if defined 
+if (id){
+  console.log(`The ID is ${id}`)
+} else {
+  console.log('no id')
+}
+
+// but if no id at all then would get a reference error
+// correct way to test this would be to use typeof operator
+
+if (typeof id !== 'undefined'){
+  console.log(`the id is ${id}`)
+} else {
+  console.log('No id')
+}
+
+// but be careful- typeof null will return 'object'- to be safe this is what could use instead
+if (typeof variable === 'undefined' || variable === null) {
+  // variable is undefined or null
+}
+
+const age = 4;
+// AND&&
+if (age > 0 && age < 12) {
+  console.log(`${name} is a child`)
+} else if (age >= 13 && age <= 19) {
+  console.log(`${name} is a teenager`)
+} else {
+  console.log(`${name} is an adult`)
+}
+
+// OR ||
+if (age < 16 || age > 65) {
+  console.log(`${name} cannot run in race`)
+} else {
+  console.log(`${name} is registered for the race`)
+}
+
+// Ternary operator
+console.log(id === 100 ? 'correct' : 'incorrect')
+
+// without bracse
+if(id === 100)
+  console.log('test')
+else 
+  console.log ('incorrect')
+
+  const color = 'orange'
+
+switch(color){
+  case 'red':
+    console.log('red')
+    break
+  case 'green':
+    console.log('green')
+    break
+  default:
+    console.log('color is not red or green')
+}
+
+// SWITCH STATEMENTS
+// inside switch define different cases
+
+let day 
+switch (new Date().getDay()){
+  case 0: 
+    day = 'Sunday'
+    break
+  case 1:
+    day = 'monday'
+    break
+  case 2:
+    day = 'tuesday'
+    break
+  case 3:
+    day = 'wednesday'
+    break
+  case 4:
+    day = 'thursday'
+    break
+  case 5:
+    day = 'friday'
+    break
+}
+
+console.log(`today is ${day}`)
+
+//   ---------------------------  //
+//   ---------------------------  //
+//  FUNCTION DECLARATIONS FUNCTION EXPRESSIONS
+
+// function declaration
+function greet(name = 'john'){
+  console.log(`hello ${name}`)
+}
+greet('ian')
+
+// es6 can define defaults
+
+// function expressions
+// ptting a function as a variable assignment 
+// usually anonymous witha  named variable 
+const square = function(x = 3){
+  return x * x;
+};
+
+square(8)
+
+// most cases not make much of a difference but some cases declarations have 
+// benefits such as hoisting, closures
+
+
+// IIFE
+(function(){
+  console.log('iife ran..')
+})()
+
+// can put funcitons inside objects as well
+// when pt inside object called a method 
+const todo = {
+  add: function(){
+    console.log('add todo..')
+  }
+}
+
+todo.add();
+
+//   ---------------------------  //
+//   ---------------------------  //
+// LOOPS AND ITERATIONS 
+
+// for, while do while loops most popular 
+
+// for loop
+for(let i = 0; i < 10; i++){
+  console.log(i)
+}
+
+// ten is not less than ten
+
+for (let i = 0; i < 10; i++) {
+  if (i ===2){
+    console.log('two is my favourite number')
+    continue //go to next iteration so 2 wont be printed nanymore- contrinue means keep going with loop
+  }
+  console.log( 'number ' + i)
+}
+
+for (let i = 0; i < 10; i++) {
+  if (i === 2) {
+    console.log('two is my favourite number')
+    continue //go to next iteration so 2 wont be printed nanymore- contrinue means keep going with loop
+  }
+
+  if (i ===5) {
+    console.log('stop the loop')
+    break
+  }
+  console.log('number ' + i)
+}
+
+// WHILE LOOP
+// for loop when know how many times going to return while loop when dont 
+let i = 0
+while(i < 10){
+  console.log(i)
+  i++
+}
+
+// do while- always going to run at least once
+do {
+  console.log('number ' + i)
+  i++
+}
+while(false)
+
+// LOOP THROUGH ARRAY
+// have specific methods for looping
+const cars = ['ford', 'chevy', 'honda']
+
+for(let i = 0; i <cars.length; i++){
+  console.log(cars[i])
+}
+
+// FOR EACH ARRAY LOOP
+cars.forEach(function(car){
+  console.log(car)
+})
+
+// MAP- return something different
+const users = [
+  {id:1, name: 'ian'},
+  {id:2, name: 'sarah'},
+  {id:3, name: 'john'}
+]
+
+const ids = users.map(function (user){
+  return user.id
+})
+console.log(ids)
+
+cars.forEach(function (car, index, array) {
+  console.log(car)
+  console.log(index)
+  console.log(array)
+})
+
+// for in often used for objects
+const user = {
+  firstName: 'ian',
+  lastName: 'mcateer',
+  age: 25
+}
+
+for(let x in user){
+  console.log(x)
+}
+for(let x in user){
+  console.log(`${x} : ${user[x]}`)
+}
