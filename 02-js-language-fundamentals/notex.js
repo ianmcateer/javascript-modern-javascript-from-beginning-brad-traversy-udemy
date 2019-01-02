@@ -594,18 +594,23 @@ todo.add();
 // LOOPS AND ITERATIONS 
 
 // for, while do while loops most popular 
+// use for loop whenknow how many iterations
+// while loop when unclear
 
 // for loop
 for(let i = 0; i < 10; i++){
   console.log(i)
 }
+// set i to 0 
+// as long as i is less than ten execute body 
+// so if condition returns false code not run
+
 
 // ten is not less than ten
-
 for (let i = 0; i < 10; i++) {
   if (i ===2){
     console.log('two is my favourite number')
-    continue //go to next iteration so 2 wont be printed nanymore- contrinue means keep going with loop
+    continue //go to next iteration so 'number 2' wont be printed nanymore- contrinue means keep going with loop
   }
   console.log( 'number ' + i)
 }
@@ -616,6 +621,7 @@ for (let i = 0; i < 10; i++) {
     continue //go to next iteration so 2 wont be printed nanymore- contrinue means keep going with loop
   }
 
+  // break breaks out of the loop
   if (i ===5) {
     console.log('stop the loop')
     break
@@ -631,12 +637,12 @@ while(i < 10){
   i++
 }
 
-// do while- always going to run at least once
+// do while- always going to run at least once no matter what even if condition isnt met
 do {
-  console.log('number ' + i)
-  i++
+  console.log('number ' + i);
+  i++;
 }
-while(false)
+while(false);
 
 // LOOP THROUGH ARRAY
 // have specific methods for looping
@@ -646,18 +652,21 @@ for(let i = 0; i <cars.length; i++){
   console.log(cars[i])
 }
 
-// FOR EACH ARRAY LOOP
+// ARRAY FOR EACH ARRAY LOOP
+// does not mutate array
 cars.forEach(function(car){
   console.log(car)
 })
 
-// MAP- return something different
+// ARRAY.MAP- return something different
+// creates a new array
 const users = [
   {id:1, name: 'ian'},
   {id:2, name: 'sarah'},
   {id:3, name: 'john'}
 ]
 
+// map doe snot mutate original array
 const ids = users.map(function (user){
   return user.id
 })
@@ -682,3 +691,105 @@ for(let x in user){
 for(let x in user){
   console.log(`${x} : ${user[x]}`)
 }
+
+
+//   ---------------------------  //
+//   ---------------------------  //
+// A LOOK AT THE WINDOW OBJECT
+// the window is the global object in client side javacript
+// node-js running as standalone process in computer
+// in client side- node and chrome use same js engine - v8
+// window object has alot to it- js developers use all time
+// local storage, fetch api, navigator object 
+
+console.log(window);
+// see fetch, document, local storage 
+
+// windowmethods, objects and proerties
+
+window.console.log(123)
+// we are at top of window object so dont need to
+// include window but it is part of th ewindow
+
+window.alert('hello world');
+
+// promot similar to alert but takes input
+const input = promot();
+alert(input);
+
+// confirm- used when deleting somehting 
+if(confirm('are you sure?')){
+  console.log('yes')
+}
+
+let val;
+val = window.outerHeight;
+val = window.outerWidth;
+
+// also have inner
+
+// scroll points
+val = window.scrollY 
+// val = window.scrollX
+
+// location object
+val = window.location  //can get host, port, pathname, href, origin, protocol
+val = window.location.hostname
+val = window.location.port
+val = window.location.href
+val = window.location.search // try entering in search terms in url search bar eg name=brad
+
+// redirect
+// window.location.href = 'http://google.com'
+
+// reload
+// window.location.reload()
+
+// HISTORY OBJECT
+// window.history.go(-1) //takes us back to the page before 
+// val = window.history.length
+
+
+// navigator object- to do w the browser not the window, chrome, firefox
+val = window.navigator
+val = window.navigator.appName //returns netscape
+val = window.navigator.appCodeName
+val = window.navigator.userAgent
+val = window.navigator.platform
+val = window.navigator.language
+
+console.log(val)
+
+// SCOPE
+// global scope
+var a = 1
+let b = 2
+const c = 3
+
+// wont log because of scope
+// function test() {
+//   var a = 3
+//   let b = 4
+//   const c = 5
+// }
+
+// if(true) {
+//   //block scope
+//     var a = 4
+//     let b = 5
+//     const c = 6
+//     console.log('if scope:', a,b,c)
+// }
+
+for(let a = 0; a < 10; a++) { //if was var would change it in the global scope
+  console.log(`loop: ${a}`)
+}
+
+console.log('global scope:', a, b, c)
+
+// var variables function scoped
+// let and const still 2 and 3
+// var is weird 
+
+// let and const block level scope
+// var function scope
