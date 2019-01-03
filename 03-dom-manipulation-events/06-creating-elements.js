@@ -16,6 +16,17 @@ li.setAttribute('Title', 'New Item');
 // create text node and append
 li.appendChild(document.createTextNode('Hello World'));
 
+// create new link element
+const link = document.createElement('a');
+link.className = 'delete-item secondary-content';
+
+// no text node inside <a> tag so can use innerHtml
+// add icon html..
+link.innerHTML =  '<i class="fa fa-remove"></i>';
+
+// append link into li
+li.appendChild(link);
+
 // insert into dom..
 // append li as child to ul
 document.querySelector('ul.collection').appendChild(li);
