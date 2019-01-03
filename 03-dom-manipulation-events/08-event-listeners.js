@@ -45,6 +45,20 @@ function onClick(e) {
 
   e.target.innertext = 'hello';
 
+  // Event type
+  val = e.type;
+
+  // Timestamp
+  val = e.timeStamp;
+
+  // Coordinates of event relative to window
+  val = e.clientY;
+  val = e.clientX;
+
+    // Coordinates of event relative to element itself
+    val = e.offsetY;
+    val = e.offsetX;
+
   console.log(val);
 }
 
