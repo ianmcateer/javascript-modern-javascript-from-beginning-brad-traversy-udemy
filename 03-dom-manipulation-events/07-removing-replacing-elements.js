@@ -1,4 +1,4 @@
-// how to replace, rmeove elemnts from nom, get attributes and classes and change them
+// how to replace, rmeove elemnts from dom, get attributes and classes and change them
 
 // REPLACE ELEMENT
 // replace h5 with a h2 with different text
