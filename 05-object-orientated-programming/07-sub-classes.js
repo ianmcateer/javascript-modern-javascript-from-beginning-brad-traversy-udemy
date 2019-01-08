@@ -9,7 +9,7 @@ class Person {
   }
 
   greeting() {
-    return `Hello there ${this.firstName} ${this.lastName}`;
+    return `Hello there ${this.firstName} ${this.lastName} `;
   }
 }
 
