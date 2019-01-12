@@ -30,4 +30,3 @@ loadPostsAsync(function(){
 // callabcks 
 // promises es6
 // async/await new as well- looks like syn code but is async
-
