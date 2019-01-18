@@ -1,8 +1,4 @@
-// callback is simply a function thats passed into another funcction and then gets ran inside the 
-// function body 
-// we have synchronouse and asynchronous callbacks
-
-// settimeout takes in cb function which is asynchronous 
+// editing previous code to consume promises
 
 const posts = [
   {title: 'post 1', body: 'this is post 1'},
@@ -10,6 +6,10 @@ const posts = [
 ]
 
 function createPost(post){
+  return new Promise(function(resolve, reject){
+    
+  })
+
   setTimeout(function(){
     posts.push(post)
   },2000)
