@@ -7,7 +7,7 @@ const posts = [
 
 function createPost(post){
   return new Promise(function(resolve, reject){
-    
+      
   })
 
   setTimeout(function(){
