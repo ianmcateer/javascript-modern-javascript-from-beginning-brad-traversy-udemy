@@ -1,5 +1,5 @@
 // benefits saving lines of code
-// and no lexical this
+// arrow functions use a lexical this
 
 function sayHello = funciton () {
   console.log('hello')
@@ -29,3 +29,13 @@ sayHello('brad')
 
 // if single parameter dont need parentheses
 const sayHello = name => console.log(`Hello ${name}`)
+
+function getText(){
+  fetch('test.txt')
+  .then(res => res.text())
+  .then(data => {
+    console.log(data)
+    document.getElementById('output').innerHTML = data;
+  })
+  .catch(err => console.log(err))
+} 
