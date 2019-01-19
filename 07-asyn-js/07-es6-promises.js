@@ -7,12 +7,11 @@ const posts = [
 
 function createPost(post){
   return new Promise(function(resolve, reject){
-      
+    setTimeout(function(){
+      posts.push(post);
+      resolve()
+    },2000)
   })
-
-  setTimeout(function(){
-    posts.push(post)
-  },2000)
 }
 
 function getPosts(){
@@ -25,7 +24,7 @@ function getPosts(){
   }, 1000)
 }
 
-createPost({title: 'post 3', body: 'this is post 3'});
+createPost({title: 'post 3', body: 'this is post 3'}).then(getPosts);
 getPosts()
 
 // takes 2 secons to createPost and 1 to get the posts 
