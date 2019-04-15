@@ -3,7 +3,7 @@
 // so when an event happens it will bubble up through its parents
 
 // eg if put a click event on a span that event will bubble up to its parent and its parent
-// event delegation is the opposite - we put the istener on one of the parent elements
+// event delegation is the opposite - we put the listener on one of the parent elements
 // and we use logic inside the event handler to target the actual event we want that click
 // for
 
