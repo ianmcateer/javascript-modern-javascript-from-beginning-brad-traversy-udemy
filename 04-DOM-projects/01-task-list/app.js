@@ -5,10 +5,10 @@ const clearBtn = document.querySelector(".clear-tasks");
 const filter = document.querySelector("#filter");
 const taskInput = document.querySelector("#task");
 
-// Add and Load all event listeners
-loadEventListners();
+// Add and Load all event listeners (instead of putting it in the global scope)
+loadEventListeners();
 
-function loadEventListners() {
+function loadEventListeners() {
   // DOM load event
   document.addEventListener("DOMContentLoaded", getTasks);
 
@@ -16,7 +16,7 @@ function loadEventListners() {
   form.addEventListener("submit", addTask);
   // add listener for remove task item
   taskList.addEventListener("click", removeTask);
-  // add listemer for clear all tasks
+  // add listener for clear all tasks
   clearBtn.addEventListener("click", clearTasks);
   // filter tasks event
   filter.addEventListener("keyup", filterTasks);
@@ -140,8 +140,8 @@ function clearTasksFromLocalStorage(){
 
 function filterTasks(e) {
   const text = e.target.value.toLowerCase();
-  // query selector allreturns nodelist so can use foreach
-  // but if was html colleciton wouldneed otconvert it to array first
+  // query selector all returns nodelist so can use foreach
+  // but if was html collection would need to convert it to array first
   document.querySelectorAll(".collection-item").forEach(function(task) {
     const item = task.firstChild.textContent;
     if (item.toLowerCase().indexOf(text) != -1) {
