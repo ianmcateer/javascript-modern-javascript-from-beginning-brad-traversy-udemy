@@ -31,10 +31,12 @@ document.querySelector(".col").addEventListener("click", function() {
   console.log("col");
 });
 
-// when click on card title its going to buble up and all of these will be called
+// when click on card title its going to bubble up and all of these will be called
 // bc of event bubbling
 
 // EVENT DELEGATION
+//putting listener on the parent and going down
+//without delegation...
 const delItem = document.querySelector(".delete-item"); //the a tag
 
 deleteItem.addEventListener("click", deleteItem);
