@@ -3,14 +3,14 @@
 // so when an event happens it will bubble up through its parents
 
 // eg if put a click event on a span that event will bubble up to its parent and its parent
-// event delegation is the opposite - we put the listener on one of the parent elements
+// event delegation is the opposite of event bubbling - we put the listener on one of the parent elements
 // and we use logic inside the event handler to target the actual event we want that click
 // for
 
-// going to targetr the ul which contains the li's, going to put event on ul then larget li we want
+// going to target the ul which contains the li's, going to put event on ul then target li we want
 // this is needed because the a tags are the ones we want to target
 
-// how event bubblng works
+// how event bubbling works
 // EVENT BUBBLING
 document.querySelector(".card-title").addEventListener("click", function() {
   console.log("card title");
