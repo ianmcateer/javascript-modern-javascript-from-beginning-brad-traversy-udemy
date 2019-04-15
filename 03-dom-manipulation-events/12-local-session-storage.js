@@ -5,10 +5,10 @@
 // window.localStorage
 
 // what you set as a value has to be a string
-// can save arrays, objects - turn them into sstring using json.stringify
+// can save arrays, objects - turn them into string using json.stringify
 // and when pull it out to use it you parse it back json.parse
 
-// diff betwen localand session storage is local storage will stay
+// diff between local and session storage is local storage will stay
 // until you manually clear it out in your settings or program
 // sessions storage  will leave and go away once browser closed/session ends
 
