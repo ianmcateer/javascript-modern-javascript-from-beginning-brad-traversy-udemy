@@ -107,4 +107,4 @@ function deleteItem(e) {
   }
 }
 
-// if refresh comes back bc we arent persiting the data to a databaseor anything like that 
+// if refresh comes back bc we arent persiting the data to a database or anything like that
