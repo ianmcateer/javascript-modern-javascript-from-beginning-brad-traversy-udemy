@@ -18,7 +18,6 @@ function calculateResults() {
 	const monthlyPayment = document.getElementById("monthly-payment");
 	const totalPayment = document.getElementById("total-payment");
 	const totalInterest = document.getElementById("total-interest");
-
 	const principal = parseFloat(amount.value);
 	const calculateInterest = parseFloat(interest.value) / 100 / 12;
 	const calculatedPayments = parseFloat(years.value * 12);
@@ -31,7 +30,7 @@ function calculateResults() {
 		monthlyPayment.value = monthly.toFixed(2);
 		totalPayment.value = (monthly * calculatedPayments).toFixed(2);
     totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2);
-    
+
     // show result
     document.getElementById("results").style.display = "block";
     // hide loader
