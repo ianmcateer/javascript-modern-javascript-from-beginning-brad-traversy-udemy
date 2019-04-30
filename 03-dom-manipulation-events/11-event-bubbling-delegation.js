@@ -77,15 +77,14 @@ function deleteItem(e) {
 // still not working why?? the parent classname is delete-item secondary-content 
 // problem className looks at entire string 
 
+// not the best way of doing bc tightly coupled to class name
+// better- use class list and see it delete item is in that list
 function deleteItem(e) {
   console.log(e.target);
   if (e.target.parentElement.className === "delete-item secondary-content") {
     console.log("delete item");
   }
 }
-
-// not the best way of doing bc tightly coupled to class name
-// better- use class list and see it delete item is in that list  
 
 function deleteItem(e) {
   console.log(e.target);
