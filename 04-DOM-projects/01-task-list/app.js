@@ -142,6 +142,7 @@ function filterTasks(e) {
   // query selector all returns nodelist so can use foreach
   // but if was html collection would need to convert it to array first
   document.querySelectorAll(".collection-item").forEach(function(task) {
+    console.log(task.firstChild.textContent)
     const item = task.firstChild.textContent;
     if (item.toLowerCase().indexOf(text) != -1) {
       task.style.display = "block";
