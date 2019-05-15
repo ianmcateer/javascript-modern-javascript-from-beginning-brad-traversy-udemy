@@ -72,14 +72,12 @@ guessBtn.addEventListener('click', function(){
 function gameOver(won, msg){
   let color;
   won === true ? color = 'green' : color = 'red';
-
   // Disable input
   guessInput.disabled = true;
   // Change border color
   guessInput.style.borderColor = color;
   // Set message
   setMessage(msg, color);
-
   // PLay Again?
   guessBtn.value = 'Play Again';
   guessBtn.className += 'play-again';
