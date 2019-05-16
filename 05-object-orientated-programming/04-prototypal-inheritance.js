@@ -15,17 +15,21 @@ Person.prototype.greeting = function(){
 
 const person1 = new Person('John', 'Doe');
 
-console.log(person1.greeting());
-
 // Customer constructor
 function Customer(firstName, lastName, phone, membership) {
-  // call Person- this function calls another function in the current function
-  // 
+  // call Person- this function calls another function form somewhere else in the current context
   Person.call(this, firstName, lastName);
-
   this.phone = phone;
   this.membership = membership;
 }
+
+//with the above you can now create a customer
+// Create customer
+// const customer1 = new Customer('Tom', 'Smith', '555-555-5555', 'Standard');
+//but customer1.greeting() will not work bc its not a function
+//its not yet inheriting the prototype
+//customer1 prototype is pointing to the Customer function constructor
+// and the Customer constructor prototype is pointing to the Object constructor
 
 // Inherit the Person prototype methods
 // so object.create() creates an empty object which its prototype pointing to at whatever you pass in 

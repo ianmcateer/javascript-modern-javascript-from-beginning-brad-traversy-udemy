@@ -1,5 +1,5 @@
 // another way to creat eobjects is object.create
-// create prototypes inside like a parent object and have different properties 
+// can create prototypes inside like a parent object and have different properties and methods
 // with different prorotype methods 
 
 const personPrototypes = {
@@ -15,6 +15,7 @@ const mary = Object.create(personPrototypes);
 mary.firstName = 'Mary';
 mary.lastName = 'Williams';
 mary.age = 30;
+//Mary.prototype points to the personPrototypes object with the methods we just defined
 
 mary.getsMarried('Thompson');
 
