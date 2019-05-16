@@ -1,8 +1,8 @@
 // most not advisable to use
-// eg primtiive types like string numbers booleans can be created as objects 
+// eg primtiive types like string numbers booleans can actually be created as objects instead of primitives
 // by using constructor like String Number 
-// not too many reasons why do this - slows down execution speed 
-// issues with === bc its an object
+// not too many reasons why do this - slows down execution speed, more code, can be confusing
+// issues with === when trying to compare value bc its an object
 
 // String
 
