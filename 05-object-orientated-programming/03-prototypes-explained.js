@@ -14,7 +14,7 @@
 // this __proto__ points to the Person.prototype
 
 // calculate age same for every person 
-// smth should put inside prototype not directly inside the object
+// this is smth should put inside prototype not directly inside the object
 
 //Object.prototype
 //Person.prototype
@@ -52,14 +52,12 @@ const john = new Person('John', 'Doe', '8-12-90');
 const mary = new Person('Mary', 'Johnson', 'March 20 1978');
 
 console.log(mary);
-
 console.log(john.calculateAge());
 
 console.log(mary.getFullName());
-
 mary.getsMaried('Smith');
-
 console.log(mary.getFullName());
 
+//if sees .hasOwnProperty method and cant find it on the instances looks up the prototype chain
 console.log(mary.hasOwnProperty('firstName'));
 console.log(mary.hasOwnProperty('getFullName'));  //returns false bc its on the prototype 
