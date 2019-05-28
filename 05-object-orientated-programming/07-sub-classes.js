@@ -16,8 +16,10 @@ class Person {
 class Customer extends Person {
   constructor(firstName, lastName, phone, membership) {
     // since extending person want to call person constructor
+    //this is similar to Person.call(firstName, lastName)
     super(firstName, lastName);
 
+    // anything extra just for the customer instance goes here
     this.phone = phone;
     this.membership = membership;
   }

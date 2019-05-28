@@ -20,7 +20,6 @@ UI.prototype.addBookToList = function(book){
     <td>${book.isbn}</td>
     <td><a href="#" class="delete">X<a></td>
   `;
-
   list.appendChild(row);
 }
 
@@ -65,13 +64,10 @@ document.getElementById('book-form').addEventListener('submit', function(e){
   const title = document.getElementById('title').value,
         author = document.getElementById('author').value,
         isbn = document.getElementById('isbn').value
-
   // Instantiate book
   const book = new Book(title, author, isbn);
-
-  // Instantiate UI
+  // Instantiate UI to add book to table in the ui
   const ui = new UI();
-
   // Validate
   if(title === '' || author === '' || isbn === '') {
     // Error alert
@@ -79,14 +75,11 @@ document.getElementById('book-form').addEventListener('submit', function(e){
   } else {
     // Add book to list
     ui.addBookToList(book);
-
     // Show success
     ui.showAlert('Book Added!', 'success');
-  
     // Clear fields
     ui.clearFields();
   }
-
   e.preventDefault();
 });
 
