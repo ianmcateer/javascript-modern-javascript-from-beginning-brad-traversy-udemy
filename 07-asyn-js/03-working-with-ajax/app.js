@@ -11,8 +11,12 @@ function loadCustomer(e) {
   xhr.open('GET', 'customer.json', true);
 
   xhr.onload = function(){
+    // 200 means ok
+    // console.log(this.responseText);
+    //200: OK
+    //403: FORBIDDEN
+    //404: Not found
     if(this.status === 200) {
-      // console.log(this.responseText);
 
       const customer = JSON.parse(this.responseText);
 
