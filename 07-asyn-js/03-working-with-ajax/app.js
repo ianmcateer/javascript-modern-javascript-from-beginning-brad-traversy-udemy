@@ -7,6 +7,7 @@ function loadCustomer(e) {
   const xhr = new XMLHttpRequest();
 
   // true for asynchronous
+  // can pass a filename or url for second paramenter
   xhr.open('GET', 'customer.json', true);
 
   xhr.onload = function(){
