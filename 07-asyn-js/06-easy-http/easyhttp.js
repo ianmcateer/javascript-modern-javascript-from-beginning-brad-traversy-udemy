@@ -25,23 +25,26 @@ easyHTTP.prototype.get = function(url, callback) {
 };
 
 
-// Make an http POST reuqest
-// HTTP headers, which do things like: tell the webserver 
+// Make an http POST request
+// HTTP headers, which do things like: tell the web server
 // what website to retrieve, based on the domain (Host:); report 
 // the user-agent and acceptable encoding and language; and other 
 // browser-specific options.
 
 easyHTTP.prototype.post = function(url, data, callback) {
   this.http.open("POST", url, true);
+  //setting the header
   this.http.setRequestHeader('Content-type', 'application/json');
   let self = this;
   this.http.onload = function(){
     callback(null, self.http.responseText)
   }
+  //send the data formatted as JSON
   this.http.send(JSON.stringify(data))
 };
 
-// Make an http PUT reuqest
+// Make an http PUT request
+// this will update a post
 easyHTTP.prototype.put = function(url, data, callback){
   this.http.open('PUT', url, true)
   this.http.setRequestHeader('Content-type', 'application/json');
@@ -52,8 +55,8 @@ easyHTTP.prototype.put = function(url, data, callback){
   this.http.send(JSON.stringify(data))
 }
 
-// Make an http DELETE reuqest
-easyHTTP.prototype.get = function(url, callback) {
+// Make an http DELETE request
+easyHTTP.prototype.delete = function(url, callback) {
 	this.http.open("DELETE", url, true);
 	let self = this;
 	this.http.onload = function() {
