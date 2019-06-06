@@ -1,22 +1,9 @@
-function Person (firstName, lastName){
-  this.firstName = firstName;
-  this.lastName= lastName;
+const getTodo = callback => {
+  setTimeout(() => {
+    callback ({ text: 'Complete Code Example' })
+  }, 2000)
 }
 
-Person.prototype.greeting = function(){
-  return `Hello there ${this.firstName} ${this.lastName}`;
-}
-
-function Customer(firstName, lastName, customerNumber){
-  Person.call(this, firstName, lastName);
-  this.customerNumber = customerNumber;
-}
-
-// Customer.prototype = {
-//   somePropery: 'somevalue'
-// }
-
-const customer1 = new Customer('ian', 'mcateer', 22);
-console.log(customer1)
-
-Customer.prototype = Object.create(Person.prototype);
+getTodo(todo => {
+  console.log(todo.text)
+})
