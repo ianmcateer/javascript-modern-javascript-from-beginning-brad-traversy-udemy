@@ -7,6 +7,7 @@ document.getElementById('button1').addEventListener('click', getExternal)
 
 // get local text file data
 function getText(){
+  //pass in whatever you want to get
   fetch('test.txt')
   .then(function(res){
     return (res.text())
